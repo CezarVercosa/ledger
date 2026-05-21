@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/accounts")
 @RequiredArgsConstructor
-@Tag(name = "Endpoint de contas")
+@Tag(name = "Endpoints de contas")
 public class AccountController {
     private final CreateAccountUseCase createAccountUseCase;
     private final AccountWebMapper mapper;

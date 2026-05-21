@@ -14,7 +14,7 @@ public class OpenApiConfig {
                         new Info()
                                 .title("Ledger Service API")
                                 .description(
-                                        "API para gerenciamento de ledger financeiro."
+                                        "API ledger financeiro."
                                 )
                                 .version("1.0.0")
                 );
