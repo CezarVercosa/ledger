@@ -40,12 +40,12 @@ public class LedgerController {
         );
     }
 
-    @GetMapping("/balance/{accountId}")
+    @GetMapping("/balance/{account-id}")
     @Operation(
             summary = "Resgata o saldo da conta"
     )
     public BalanceResponse getBalance(
-            @PathVariable UUID accountId
+            @PathVariable("account-id") UUID accountId
     ) {
         return new BalanceResponse(
                 accountId,
@@ -53,12 +53,12 @@ public class LedgerController {
         );
     }
 
-    @GetMapping("/statement/{accountId}")
+    @GetMapping("/statement/{account-id}")
     @Operation(
-            summary = "Todas as movimentações relacionadas àquela conta"
+            summary = "Todas as movimentações relacionadas a conta designada"
     )
     public List<StatementResponse> getStatement(
-            @PathVariable UUID accountId
+            @PathVariable("account-id") UUID accountId
     ) {
         return mapper.toResponseList(
                 getStatementUseCase.execute(accountId)
